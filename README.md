@@ -76,7 +76,7 @@ Each row is one `check` command against the tag on the project's own repository.
 | --- | --- | --- | --- | --- | --- | --- |
 | attrs | 25.4.0 | 19 | 19 | 0 | `src/` 19 | SAME_SOURCE |
 | click | 8.5.1 | 17 | 17 | 0 | `src/` 17 | SAME_SOURCE |
-| coverage | 7.17.3 | 44 | 44 | 0 | `src/` 44 | SAME_SOURCE |
+| coverage | 7.17.3 | 44 | 44 | 0 | exact 44 | SAME_SOURCE |
 | markupsafe | 3.0.4 | 2 | 2 | 0 | `src/` 2 | SAME_SOURCE |
 | packaging | 26.3 | 22 | 22 | 0 | `src/` 22 | SAME_SOURCE |
 | six | 1.17.0 | 1 | 1 | 0 | exact 1 | SAME_SOURCE |
@@ -96,7 +96,7 @@ Two measured facts, both reproducible from the certificates:
    modules. The strict verdict is `DIVERGENT`; the tool never auto-allowlists them. With an explicit
    `--allow '*/version.py'` the same run becomes `SAME_SOURCE` while still reporting
    `allowed_divergences: 1` (`evidence/allowed/tox.json`, `evidence/allowed/virtualenv.json`).
-   Everything else — 336 files — is byte-identical.
+   All 338 files that exist on both sides are byte-identical; only the two generated modules are extra in the wheel.
 
 ### Negative controls (the instrument can say no)
 
@@ -115,8 +115,8 @@ returned 73/73 identical returns a precise, byte-level diff when the source is w
 **B 档：把「发布产物 ↔ 源码树」的逐文件字节散度做成可离线复算的证书，并把路径布局归一化作为
 证书的一部分显式记录。** 既有台账条目（`sametree-recheck` 复核 PR 的 base/patched 同树、
 `perfclaim-guard` 管声明、`caseproof` 数用例）都不测「PyPI 已发布 wheel vs 发布 tag」。本轮给出
-的新结论是可证伪的：9 个真实发布共 338 个可比 `.py`，336 个逐字节一致；2 个严格不一致都精确定位
-到构建期生成的 `version.py`（524 字节，tag 中不存在），显式 `--allow` 后归零；而 281/338
+的新结论是可证伪的：9 个真实发布共 340 个 wheel `.py`，其中 338 个在 tag 中逐字节一致；2 个严格不一致都精确定位
+到仅存在于 wheel 的构建期生成 `version.py`（524 字节，tag 中不存在），显式 `--allow` 后归零；而 281/338
 （83.1%）只有经过 `src/` 归一化才匹配——朴素路径比较会在 6 个 `src/` 布局项目上把 100% 的文件
 误判为缺失。两个负控（attrs 25.4.0 vs 25.3.0：7/19 不同；six 1.17.0 vs 1.16.0：1/1 不同）证明
 该证书不是只会输出 SAME。
