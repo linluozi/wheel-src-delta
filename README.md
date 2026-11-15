@@ -61,7 +61,15 @@ python3 -m wheelsrcdelta check --wheel dist/demo-1.0-py3-none-any.whl \
 
 # re-derive the certificate digest offline (detects edited JSON)
 python3 -m wheelsrcdelta verify attrs.json
+
+# gate a whole release set; exit 2 if any release has an unexplained divergence
+python3 -m wheelsrcdelta batch evidence/batch-manifest.json --json-dir certs/
 ```
+
+`batch` reads `{"entries": [...]}` (same options as one `check` per entry), runs them under one
+process, writes an aggregate summary, and takes the worst verdict as its exit code. A live demo is
+in `evidence/batch.json`: attrs and six are `SAME_SOURCE`, tox is `DIVERGENT` (the generated
+`version.py`), so the batch is `ANY_DIVERGENT` with exit 2.
 
 Exit codes: `0` SAME_SOURCE, `2` DIVERGENT, `3` INCONCLUSIVE (no comparable `.py`, or a
 precondition failed), `1` usage/network error. `--allow GLOB` (repeatable) marks a divergence as
@@ -165,10 +173,10 @@ python3 -m wheelsrcdelta verify /tmp/attrs.json
 
 ## Tests
 
-`python3 -m unittest discover -s tests -v` → **24 tests, OK** (0.33 s). They build wheels, sdists and
+`python3 -m unittest discover -s tests -v` → **28 tests, OK** (0.46 s). They build wheels, sdists and
 real git repositories in temporary directories and cover: exact/`src/` mapping, single-byte and
 CRLF/BOM differences, empty files, missing and source-only modules, allowlists, ambiguity between
-`demo/` and `src/demo/`, digest mismatch, certificate determinism/tampering, and all CLI exit codes.
+`demo/` and `src/demo/`, digest mismatch, certificate determinism/tampering, batch aggregation/gating, and all CLI exit codes.
 
 ## Environment
 

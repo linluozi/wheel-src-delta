@@ -1,0 +1,7 @@
+{
+  "entries": [
+    {"project": "attrs", "version": "25.4.0", "against": "git", "repo": "git@github-linluozi:python-attrs/attrs.git", "ref": "25.4.0"},
+    {"project": "six", "version": "1.17.0", "against": "git", "repo": "git@github-linluozi:benjaminp/six.git", "ref": "1.17.0"},
+    {"project": "tox", "version": "4.67.13", "against": "git", "repo": "git@github-linluozi:tox-dev/tox.git", "ref": "4.67.13"}
+  ]
+}

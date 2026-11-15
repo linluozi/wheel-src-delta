@@ -318,3 +318,62 @@ class TestCli(Base):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class TestBatch(Base):
+    def run_cli(self, argv):
+        out, err = io.StringIO(), io.StringIO()
+        old = sys.stdout, sys.stderr
+        sys.stdout, sys.stderr = out, err
+        try:
+            code = cli.main(argv)
+        finally:
+            sys.stdout, sys.stderr = old
+        return code, out.getvalue()
+
+    def manifest(self, entries):
+        path = os.path.join(self.root, "manifest.json")
+        with open(path, "w") as fh:
+            json.dump({"entries": entries}, fh)
+        return path
+
+    def test_batch_all_same(self):
+        whl = self.wheel({"demo/__init__.py": b"x = 1\n"})
+        repo = self.repo({"demo/__init__.py": b"x = 1\n"})
+        repo2 = self.repo({"demo/__init__.py": b"x = 1\n"}, name="repo2")
+        mf = self.manifest([
+            {"project": "a", "version": "1", "wheel": whl, "against": "git", "repo": repo, "ref": "v1"},
+            {"project": "b", "version": "2", "wheel": whl, "against": "git", "repo": repo2, "ref": "v1"},
+        ])
+        outpath = os.path.join(self.root, "b.json")
+        code, out = self.run_cli(["batch", mf, "--json-out", outpath])
+        self.assertEqual(code, 0)
+        summary = json.load(open(outpath))
+        self.assertEqual(summary["verdict"], "ALL_SAME")
+        self.assertEqual(summary["totals"]["same_source"], 2)
+
+    def test_batch_divergent_gates(self):
+        whl = self.wheel({"demo/__init__.py": b"x = 1\n"})
+        repo = self.repo({"demo/__init__.py": b"x = 1\n"})
+        bad = self.repo({"demo/__init__.py": b"x = 2\n"}, name="bad")
+        mf = self.manifest([
+            {"project": "ok", "version": "1", "wheel": whl, "against": "git", "repo": repo, "ref": "v1"},
+            {"project": "bad", "version": "2", "wheel": whl, "against": "git", "repo": bad, "ref": "v1"},
+        ])
+        code, out = self.run_cli(["batch", mf])
+        self.assertEqual(code, 2)
+        self.assertEqual(json.loads(out)["verdict"], "ANY_DIVERGENT")
+
+    def test_missing_manifest_is_error(self):
+        code, _ = self.run_cli(["batch", os.path.join(self.root, "nope.json")])
+        self.assertEqual(code, 1)
+
+    def test_batch_json_dir_writes_certificates(self):
+        whl = self.wheel({"demo/__init__.py": b"x = 1\n"})
+        repo = self.repo({"demo/__init__.py": b"x = 1\n"})
+        mf = self.manifest([{"project": "demo", "version": "1", "wheel": whl,
+                             "against": "git", "repo": repo, "ref": "v1"}])
+        outdir = os.path.join(self.root, "certs")
+        code, _ = self.run_cli(["batch", mf, "--json-dir", outdir, "--quiet"])
+        self.assertEqual(code, 0)
+        self.assertTrue(os.path.exists(os.path.join(outdir, "demo-1.json")))

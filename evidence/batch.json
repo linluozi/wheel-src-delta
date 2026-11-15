@@ -1,0 +1,36 @@
+{
+  "entries": [
+    {
+      "certificate_sha256": "7946ba582f4635ce1d05750164c0b2015e15bd9745764fc521116d200a273440",
+      "compared": 19,
+      "project": "attrs",
+      "unexplained_divergences": 0,
+      "verdict": "SAME_SOURCE",
+      "version": "25.4.0"
+    },
+    {
+      "certificate_sha256": "649937278531f9e689f299c500123b78de911e78e7b0f6f09213e8341a52dce2",
+      "compared": 1,
+      "project": "six",
+      "unexplained_divergences": 0,
+      "verdict": "SAME_SOURCE",
+      "version": "1.17.0"
+    },
+    {
+      "certificate_sha256": "b4d5b91b1a1e1dbd54d77b293eb0102ea51557a3e37f116f31551d766b0a33ae",
+      "compared": 129,
+      "project": "tox",
+      "unexplained_divergences": 1,
+      "verdict": "DIVERGENT",
+      "version": "4.67.13"
+    }
+  ],
+  "schema": "wheelsrcdelta-batch/1",
+  "totals": {
+    "divergent": 1,
+    "inconclusive": 0,
+    "releases": 3,
+    "same_source": 2
+  },
+  "verdict": "ANY_DIVERGENT"
+}

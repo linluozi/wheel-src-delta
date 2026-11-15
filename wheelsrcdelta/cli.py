@@ -36,13 +36,16 @@ def _emit(cert: dict, json_out: str | None, quiet: bool) -> None:
         with open(json_out, "w", encoding="utf-8") as fh:
             fh.write(blob + "\n")
     if not quiet:
-        c = cert["comparison"]
-        print(
-            f"{cert['verdict']}: {c['compared']} compared, {c['identical']} identical, "
-            f"{c['differing']} differing, {c['missing_in_source']} missing-in-source, "
-            f"{c['source_only']} source-only",
-            file=sys.stderr,
-        )
+        c = cert.get("comparison")
+        if c is not None:
+            print(
+                f"{cert['verdict']}: {c['compared']} compared, {c['identical']} identical, "
+                f"{c['differing']} differing, {c['missing_in_source']} missing-in-source, "
+                f"{c['source_only']} source-only",
+                file=sys.stderr,
+            )
+        else:
+            print(f"{cert['verdict']}: {cert['totals']}", file=sys.stderr)
         if not json_out:
             print(blob)
 
@@ -60,16 +63,15 @@ def _resolve_wheel(args, workdir: str):
     return path, item.get("digests", {}).get("sha256"), item["url"], meta
 
 
-def cmd_check(args) -> int:
-    workdir = tempfile.mkdtemp(prefix="wsd-")
-    git_source = None
+def _perform(args, workdir: str) -> dict:
+    """Run one comparison described by an argparse-like namespace."""
+    wheel_path, expected, wheel_url, meta = _resolve_wheel(args, workdir)
+    source = None
     try:
-        wheel_path, expected, wheel_url, meta = _resolve_wheel(args, workdir)
         if args.against == "git":
             if not (args.repo and args.ref):
                 raise ToolError("--against git requires --repo and --ref")
             source = GitSource(args.repo, args.ref, workdir=workdir)
-            git_source = source
         else:
             if args.sdist:
                 sdist_path = args.sdist
@@ -78,7 +80,7 @@ def cmd_check(args) -> int:
             else:
                 raise ToolError("--against sdist requires --sdist or --project/--version")
             source = SdistSource(sdist_path)
-        cert = build_certificate(
+        return build_certificate(
             project=args.project,
             version=args.version,
             wheel_path=wheel_path,
@@ -88,6 +90,15 @@ def cmd_check(args) -> int:
             allow=args.allow or [],
             generated_at=_now(),
         )
+    finally:
+        if isinstance(source, GitSource):
+            source.cleanup()
+
+
+def cmd_check(args) -> int:
+    workdir = tempfile.mkdtemp(prefix="wsd-")
+    try:
+        cert = _perform(args, workdir)
         _emit(cert, args.json_out, args.quiet)
         if cert["verdict"] == "SAME_SOURCE":
             return EXIT_SAME
@@ -98,9 +109,77 @@ def cmd_check(args) -> int:
         print(f"error: {exc}", file=sys.stderr)
         return EXIT_ERROR
     finally:
-        if git_source is not None:
-            git_source.cleanup()
         shutil.rmtree(workdir, ignore_errors=True)
+
+
+def cmd_batch(args) -> int:
+    """Check a manifest of releases and gate on the worst verdict."""
+    try:
+        with open(args.manifest, "r", encoding="utf-8") as fh:
+            manifest = json.load(fh)
+        entries = manifest["entries"]
+        if not isinstance(entries, list) or not entries:
+            raise ToolError("manifest must contain a non-empty 'entries' list")
+    except (OSError, ValueError, KeyError) as exc:
+        print(f"error: cannot read manifest: {exc}", file=sys.stderr)
+        return EXIT_ERROR
+
+    workdir = tempfile.mkdtemp(prefix="wsd-batch-")
+    results = []
+    worst = EXIT_SAME
+    try:
+        for entry in entries:
+            ns = argparse.Namespace(
+                project=entry.get("project"),
+                version=entry.get("version"),
+                wheel=entry.get("wheel"),
+                against=entry.get("against", "git"),
+                repo=entry.get("repo"),
+                ref=entry.get("ref"),
+                sdist=entry.get("sdist"),
+                allow=entry.get("allow") or [],
+            )
+            try:
+                cert = _perform(ns, workdir)
+            except ToolError as exc:
+                results.append({"project": ns.project, "version": ns.version,
+                                "verdict": "INCONCLUSIVE", "error": str(exc)})
+                worst = max(worst, EXIT_INCONCLUSIVE)
+                continue
+            if args.json_dir:
+                os.makedirs(args.json_dir, exist_ok=True)
+                name = f"{ns.project}-{ns.version}.json".replace("/", "_")
+                with open(os.path.join(args.json_dir, name), "w", encoding="utf-8") as fh:
+                    json.dump(cert, fh, indent=2, sort_keys=True)
+            results.append({
+                "project": ns.project,
+                "version": ns.version,
+                "verdict": cert["verdict"],
+                "compared": cert["comparison"]["compared"],
+                "unexplained_divergences": cert["comparison"]["unexplained_divergences"],
+                "certificate_sha256": cert["certificate_sha256"],
+            })
+            if cert["verdict"] == "DIVERGENT":
+                worst = max(worst, EXIT_DIVERGENT)
+            elif cert["verdict"] == "INCONCLUSIVE":
+                worst = max(worst, EXIT_INCONCLUSIVE)
+    finally:
+        shutil.rmtree(workdir, ignore_errors=True)
+
+    summary = {
+        "schema": "wheelsrcdelta-batch/1",
+        "entries": results,
+        "totals": {
+            "releases": len(results),
+            "same_source": sum(1 for r in results if r["verdict"] == "SAME_SOURCE"),
+            "divergent": sum(1 for r in results if r["verdict"] == "DIVERGENT"),
+            "inconclusive": sum(1 for r in results if r.get("verdict") == "INCONCLUSIVE"),
+        },
+        "verdict": {EXIT_SAME: "ALL_SAME", EXIT_DIVERGENT: "ANY_DIVERGENT",
+                    EXIT_INCONCLUSIVE: "ANY_INCONCLUSIVE"}[worst],
+    }
+    _emit(summary, args.json_out, args.quiet)
+    return worst
 
 
 def cmd_verify(args) -> int:
@@ -141,6 +220,13 @@ def build_parser() -> argparse.ArgumentParser:
     c.add_argument("--json-out", help="write the certificate to this path")
     c.add_argument("--quiet", action="store_true", help="no summary on stderr")
     c.set_defaults(func=cmd_check)
+
+    b = sub.add_parser("batch", help="check a manifest of releases, gate on the worst verdict")
+    b.add_argument("manifest", help="JSON manifest with an 'entries' list")
+    b.add_argument("--json-dir", help="write each certificate here")
+    b.add_argument("--json-out", help="write the batch summary here")
+    b.add_argument("--quiet", action="store_true")
+    b.set_defaults(func=cmd_batch)
 
     v = sub.add_parser("verify", help="recompute a certificate's sha256")
     v.add_argument("certificate")

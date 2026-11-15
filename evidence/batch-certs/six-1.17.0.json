@@ -1,0 +1,65 @@
+{
+  "certificate_sha256": "649937278531f9e689f299c500123b78de911e78e7b0f6f09213e8341a52dce2",
+  "comparison": {
+    "allow": [],
+    "allowed_divergences": 0,
+    "compared": 1,
+    "differing": 0,
+    "identical": 1,
+    "matched_via": {
+      "ambiguous": 0,
+      "exact": 1,
+      "lib/": 0,
+      "src/": 0
+    },
+    "missing_in_source": 0,
+    "source_only": 0,
+    "source_py_files": 4,
+    "unexplained_divergences": 0,
+    "wheel_py_files": 1
+  },
+  "files": [
+    {
+      "allowed": false,
+      "bytes_source": 34703,
+      "bytes_wheel": 34703,
+      "matched_via": "exact",
+      "path": "six.py",
+      "sha256_source": "c51c91f703d3d4b3696c923cb5fec213e05e75d9215393befac7f2fa6a3904df",
+      "sha256_wheel": "c51c91f703d3d4b3696c923cb5fec213e05e75d9215393befac7f2fa6a3904df",
+      "source_path": "six.py",
+      "status": "identical"
+    }
+  ],
+  "generated_at": "2026-11-15T18:22:36Z",
+  "manifest_sha256": {
+    "source_py": "6c01669461ea20344bfcf5730d4f36b6f7eb383069978bced32d0e9ebbb2a24b",
+    "wheel_py": "6c01669461ea20344bfcf5730d4f36b6f7eb383069978bced32d0e9ebbb2a24b"
+  },
+  "preconditions": {
+    "git_worktree": null,
+    "non_py_wheel_entries_skipped": 5,
+    "wheel_digest_declared": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+    "wheel_digest_matches": true
+  },
+  "schema": "wheelsrcdelta/1",
+  "source_only": [],
+  "subject": {
+    "project": "six",
+    "source": {
+      "commit": "ebd9b3af90247b8858d415a05e96e9ee61e48d07",
+      "kind": "git",
+      "ref": "1.17.0",
+      "repo": "git@github-linluozi:benjaminp/six.git"
+    },
+    "version": "1.17.0",
+    "wheel": {
+      "bytes": 11050,
+      "filename": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl"
+    }
+  },
+  "verdict": "SAME_SOURCE",
+  "verdict_reason": "all compared .py files are byte-identical"
+}
