@@ -1,0 +1,65 @@
+{
+  "certificate_sha256": "3942c7257e168cd039f07b12690b8ef7dc0ac10e0920a273018992e1d99a3bac",
+  "comparison": {
+    "allow": [],
+    "allowed_divergences": 0,
+    "compared": 1,
+    "differing": 1,
+    "identical": 0,
+    "matched_via": {
+      "ambiguous": 0,
+      "exact": 1,
+      "lib/": 0,
+      "src/": 0
+    },
+    "missing_in_source": 0,
+    "source_only": 0,
+    "source_py_files": 4,
+    "unexplained_divergences": 1,
+    "wheel_py_files": 1
+  },
+  "files": [
+    {
+      "allowed": false,
+      "bytes_source": 34549,
+      "bytes_wheel": 34703,
+      "matched_via": "exact",
+      "path": "six.py",
+      "sha256_source": "4ce39f422ee71467ccac8bed76beb05f8c321c7f0ceda9279ae2dfa3670106b3",
+      "sha256_wheel": "c51c91f703d3d4b3696c923cb5fec213e05e75d9215393befac7f2fa6a3904df",
+      "source_path": "six.py",
+      "status": "differing"
+    }
+  ],
+  "generated_at": "2026-11-15T18:07:53Z",
+  "manifest_sha256": {
+    "source_py": "1708de821413376620753d17479cc0225c551ab004028080545668b7771a1979",
+    "wheel_py": "6c01669461ea20344bfcf5730d4f36b6f7eb383069978bced32d0e9ebbb2a24b"
+  },
+  "preconditions": {
+    "git_worktree": null,
+    "non_py_wheel_entries_skipped": 5,
+    "wheel_digest_declared": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+    "wheel_digest_matches": true
+  },
+  "schema": "wheelsrcdelta/1",
+  "source_only": [],
+  "subject": {
+    "project": "six",
+    "source": {
+      "commit": "65486e4383f9f411da95937451205d3c7b61b9e1",
+      "kind": "git",
+      "ref": "1.16.0",
+      "repo": "git@github-linluozi:benjaminp/six.git"
+    },
+    "version": "1.17.0",
+    "wheel": {
+      "bytes": 11050,
+      "filename": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl"
+    }
+  },
+  "verdict": "DIVERGENT",
+  "verdict_reason": "1 unexplained byte-level divergence(s)"
+}

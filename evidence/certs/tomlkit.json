@@ -1,0 +1,186 @@
+{
+  "certificate_sha256": "3313149ae480aeae9ec4d6d460deb5f3f15a184e80165e26e908142c9b0d2d6b",
+  "comparison": {
+    "allow": [],
+    "allowed_divergences": 0,
+    "compared": 12,
+    "differing": 0,
+    "identical": 12,
+    "matched_via": {
+      "ambiguous": 0,
+      "exact": 12,
+      "lib/": 0,
+      "src/": 0
+    },
+    "missing_in_source": 0,
+    "source_only": 0,
+    "source_py_files": 26,
+    "unexplained_divergences": 0,
+    "wheel_py_files": 12
+  },
+  "files": [
+    {
+      "allowed": false,
+      "bytes_source": 1282,
+      "bytes_wheel": 1282,
+      "matched_via": "exact",
+      "path": "tomlkit/__init__.py",
+      "sha256_source": "2a4876d4ff9d0050d76808f1cc06a6be09228127abf5b99c5ce6bdb307d7ed7d",
+      "sha256_wheel": "2a4876d4ff9d0050d76808f1cc06a6be09228127abf5b99c5ce6bdb307d7ed7d",
+      "source_path": "tomlkit/__init__.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 504,
+      "bytes_wheel": 504,
+      "matched_via": "exact",
+      "path": "tomlkit/_compat.py",
+      "sha256_source": "7a1521d5d7466e4e9f65cfd586de32fa6c87abef5c20ad14558063efd5c790e4",
+      "sha256_wheel": "7a1521d5d7466e4e9f65cfd586de32fa6c87abef5c20ad14558063efd5c790e4",
+      "source_path": "tomlkit/_compat.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 2230,
+      "bytes_wheel": 2230,
+      "matched_via": "exact",
+      "path": "tomlkit/_types.py",
+      "sha256_source": "0611c08906a898981bfcd5511e777c50c656e9940ca4c20bddf7ddeae2486853",
+      "sha256_wheel": "0611c08906a898981bfcd5511e777c50c656e9940ca4c20bddf7ddeae2486853",
+      "source_path": "tomlkit/_types.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 4594,
+      "bytes_wheel": 4594,
+      "matched_via": "exact",
+      "path": "tomlkit/_utils.py",
+      "sha256_source": "4e26e09f3eef396610f4c228c1815b51021066d4fd9c9d9c76acecbd7e9f81ac",
+      "sha256_wheel": "4e26e09f3eef396610f4c228c1815b51021066d4fd9c9d9c76acecbd7e9f81ac",
+      "source_path": "tomlkit/_utils.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 10334,
+      "bytes_wheel": 10334,
+      "matched_via": "exact",
+      "path": "tomlkit/api.py",
+      "sha256_source": "5c6cb9ffb73b6ad19ccbe9fc498be363a9a5ec327582e516768b00ee358d36e3",
+      "sha256_wheel": "5c6cb9ffb73b6ad19ccbe9fc498be363a9a5ec327582e516768b00ee358d36e3",
+      "source_path": "tomlkit/api.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 52447,
+      "bytes_wheel": 52447,
+      "matched_via": "exact",
+      "path": "tomlkit/container.py",
+      "sha256_source": "8d4315ba9d10e7fbc5b5460d124cf27cb73ff66a31b4b4dfdb8a66cebe93fcb6",
+      "sha256_wheel": "8d4315ba9d10e7fbc5b5460d124cf27cb73ff66a31b4b4dfdb8a66cebe93fcb6",
+      "source_path": "tomlkit/container.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 5758,
+      "bytes_wheel": 5758,
+      "matched_via": "exact",
+      "path": "tomlkit/exceptions.py",
+      "sha256_source": "d5b58a0f077b65c93919b4d523380931f927c51a1a0752e570e900e598556e05",
+      "sha256_wheel": "d5b58a0f077b65c93919b4d523380931f927c51a1a0752e570e900e598556e05",
+      "source_path": "tomlkit/exceptions.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 77242,
+      "bytes_wheel": 77242,
+      "matched_via": "exact",
+      "path": "tomlkit/items.py",
+      "sha256_source": "434e1d1cf2ccee906015062e216c268820dea5734c8153e7980dde3cb170a409",
+      "sha256_wheel": "434e1d1cf2ccee906015062e216c268820dea5734c8153e7980dde3cb170a409",
+      "source_path": "tomlkit/items.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 45837,
+      "bytes_wheel": 45837,
+      "matched_via": "exact",
+      "path": "tomlkit/parser.py",
+      "sha256_source": "a74abeff54ea1222a5bc113c29a2e824a4cc4778ebabdad36b9e91d004c8b92f",
+      "sha256_wheel": "a74abeff54ea1222a5bc113c29a2e824a4cc4778ebabdad36b9e91d004c8b92f",
+      "source_path": "tomlkit/parser.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 7717,
+      "bytes_wheel": 7717,
+      "matched_via": "exact",
+      "path": "tomlkit/source.py",
+      "sha256_source": "2be326699043ae118d762fc4293ccdbf9e49d88f529af367cc9caf5bef45cefb",
+      "sha256_wheel": "2be326699043ae118d762fc4293ccdbf9e49d88f529af367cc9caf5bef45cefb",
+      "source_path": "tomlkit/source.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 110,
+      "bytes_wheel": 110,
+      "matched_via": "exact",
+      "path": "tomlkit/toml_document.py",
+      "sha256_source": "3824e45977773f9f04653e120fcfdd75cd58a6431aaad952e7fb2d1d306630e2",
+      "sha256_wheel": "3824e45977773f9f04653e120fcfdd75cd58a6431aaad952e7fb2d1d306630e2",
+      "source_path": "tomlkit/toml_document.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 1664,
+      "bytes_wheel": 1664,
+      "matched_via": "exact",
+      "path": "tomlkit/toml_file.py",
+      "sha256_source": "d14e26e415728ee41dd2dd2bfa653e92879fa976e69ec3dd00de8a7bbd56e5d0",
+      "sha256_wheel": "d14e26e415728ee41dd2dd2bfa653e92879fa976e69ec3dd00de8a7bbd56e5d0",
+      "source_path": "tomlkit/toml_file.py",
+      "status": "identical"
+    }
+  ],
+  "generated_at": "2026-11-15T18:07:05Z",
+  "manifest_sha256": {
+    "source_py": "3377722cf675e6abfa6858874d431e22cc390e69e08582cb11b01b0f3305fe55",
+    "wheel_py": "3377722cf675e6abfa6858874d431e22cc390e69e08582cb11b01b0f3305fe55"
+  },
+  "preconditions": {
+    "git_worktree": null,
+    "non_py_wheel_entries_skipped": 5,
+    "wheel_digest_declared": "05562412163a3037b94497385fb7f9204c637bc605af7a48199e41cf2272f437",
+    "wheel_digest_matches": true
+  },
+  "schema": "wheelsrcdelta/1",
+  "source_only": [],
+  "subject": {
+    "project": "tomlkit",
+    "source": {
+      "commit": "a0b15ebb09167ede584fc36ad5362fc3039b0530",
+      "kind": "git",
+      "ref": "0.15.2",
+      "repo": "git@github-linluozi:python-poetry/tomlkit.git"
+    },
+    "version": "0.15.2",
+    "wheel": {
+      "bytes": 52225,
+      "filename": "tomlkit-0.15.2-py3-none-any.whl",
+      "sha256": "05562412163a3037b94497385fb7f9204c637bc605af7a48199e41cf2272f437",
+      "url": "https://files.pythonhosted.org/packages/da/46/7d84138a60a8bd796825b2d38ebe92d0d16501ca57d501b7c5d677401bbc/tomlkit-0.15.2-py3-none-any.whl"
+    }
+  },
+  "verdict": "SAME_SOURCE",
+  "verdict_reason": "all compared .py files are byte-identical"
+}

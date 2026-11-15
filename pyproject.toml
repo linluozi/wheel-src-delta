@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wheelsrcdelta"
+version = "1.0.0"
+description = "Byte-exact wheel-vs-source divergence certificate for Python releases"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "linluozi"}]
+keywords = ["supply-chain", "reproducible-builds", "pypi", "wheel", "sdist"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: Security",
+]
+
+[project.scripts]
+wheelsrcdelta = "wheelsrcdelta.cli:main"
+
+[tool.setuptools]
+packages = ["wheelsrcdelta"]

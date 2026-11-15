@@ -1,0 +1,296 @@
+{
+  "certificate_sha256": "c80806001a78068d7706dd4d2e7f6e07e86d877729e8406ad277bf9821c90d4b",
+  "comparison": {
+    "allow": [],
+    "allowed_divergences": 0,
+    "compared": 22,
+    "differing": 0,
+    "identical": 22,
+    "matched_via": {
+      "ambiguous": 0,
+      "exact": 0,
+      "lib/": 0,
+      "src/": 22
+    },
+    "missing_in_source": 0,
+    "source_only": 0,
+    "source_py_files": 74,
+    "unexplained_divergences": 0,
+    "wheel_py_files": 22
+  },
+  "files": [
+    {
+      "allowed": false,
+      "bytes_source": 494,
+      "bytes_wheel": 494,
+      "matched_via": "src/",
+      "path": "packaging/__init__.py",
+      "sha256_source": "6e758cdd0028b2cad74c739b9adc9c9f06f054932306280b878bfe59d39219b5",
+      "sha256_wheel": "6e758cdd0028b2cad74c739b9adc9c9f06f054932306280b878bfe59d39219b5",
+      "source_path": "src/packaging/__init__.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 3236,
+      "bytes_wheel": 3236,
+      "matched_via": "src/",
+      "path": "packaging/_elffile.py",
+      "sha256_source": "1f025f54c573f1a85740c4fbd908cc1d1fb0c177c14377ebf5f09d6cd5368780",
+      "sha256_wheel": "1f025f54c573f1a85740c4fbd908cc1d1fb0c177c14377ebf5f09d6cd5368780",
+      "source_path": "src/packaging/_elffile.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 10000,
+      "bytes_wheel": 10000,
+      "matched_via": "src/",
+      "path": "packaging/_manylinux.py",
+      "sha256_source": "5b6e84324c42538ab4cdb148e2430fdba36f04427b0efda55bea083a35fa6136",
+      "sha256_wheel": "5b6e84324c42538ab4cdb148e2430fdba36f04427b0efda55bea083a35fa6136",
+      "source_path": "src/packaging/_manylinux.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 2774,
+      "bytes_wheel": 2774,
+      "matched_via": "src/",
+      "path": "packaging/_musllinux.py",
+      "sha256_source": "0328fb827b1170c77df4c107d49be8df8d37262103490a61e8acad8a2f9cadff",
+      "sha256_wheel": "0328fb827b1170c77df4c107d49be8df8d37262103490a61e8acad8a2f9cadff",
+      "source_path": "src/packaging/_musllinux.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 12639,
+      "bytes_wheel": 12639,
+      "matched_via": "src/",
+      "path": "packaging/_parser.py",
+      "sha256_source": "88a348115209327497e453b635e5db099fd592f9335d710c7313b29cdb30c50c",
+      "sha256_wheel": "88a348115209327497e453b635e5db099fd592f9335d710c7313b29cdb30c50c",
+      "source_path": "src/packaging/_parser.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 30850,
+      "bytes_wheel": 30850,
+      "matched_via": "src/",
+      "path": "packaging/_ranges.py",
+      "sha256_source": "b7b595f2e692aeb3697c545b85c24cbbcb4552f2adc6d9059aa82d0877e816b7",
+      "sha256_wheel": "b7b595f2e692aeb3697c545b85c24cbbcb4552f2adc6d9059aa82d0877e816b7",
+      "source_path": "src/packaging/_ranges.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 1109,
+      "bytes_wheel": 1109,
+      "matched_via": "src/",
+      "path": "packaging/_structures.py",
+      "sha256_source": "eb48d16c5efca7ccf930a9cd77a700a6b80e69d0891d5d03966526441a8565cb",
+      "sha256_wheel": "eb48d16c5efca7ccf930a9cd77a700a6b80e69d0891d5d03966526441a8565cb",
+      "source_path": "src/packaging/_structures.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 5573,
+      "bytes_wheel": 5573,
+      "matched_via": "src/",
+      "path": "packaging/_tokenizer.py",
+      "sha256_source": "cc25e57c0d564c89e15073471d6e1c264299ca946fb17c0e1e4af54ef7713ee6",
+      "sha256_wheel": "cc25e57c0d564c89e15073471d6e1c264299ca946fb17c0e1e4af54ef7713ee6",
+      "source_path": "src/packaging/_tokenizer.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 11224,
+      "bytes_wheel": 11224,
+      "matched_via": "src/",
+      "path": "packaging/dependency_groups.py",
+      "sha256_source": "5309cc564ca3022dfb594816e9d593bb09cdf34208c1fb8c5ec9afb6c670278c",
+      "sha256_wheel": "5309cc564ca3022dfb594816e9d593bb09cdf34208c1fb8c5ec9afb6c670278c",
+      "source_path": "src/packaging/dependency_groups.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 11645,
+      "bytes_wheel": 11645,
+      "matched_via": "src/",
+      "path": "packaging/direct_url.py",
+      "sha256_source": "843baa95d04cbb49288de9d9fd77ee946e862cb603123e7e46a69e171fa7d06b",
+      "sha256_wheel": "843baa95d04cbb49288de9d9fd77ee946e862cb603123e7e46a69e171fa7d06b",
+      "source_path": "src/packaging/direct_url.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 2680,
+      "bytes_wheel": 2680,
+      "matched_via": "src/",
+      "path": "packaging/errors.py",
+      "sha256_source": "ea17c461701ff2ffc817ae7e94569d24e30889e04fdb120ab721178c6d67188b",
+      "sha256_wheel": "ea17c461701ff2ffc817ae7e94569d24e30889e04fdb120ab721178c6d67188b",
+      "source_path": "src/packaging/errors.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 7859,
+      "bytes_wheel": 7859,
+      "matched_via": "src/",
+      "path": "packaging/licenses/__init__.py",
+      "sha256_source": "590d12eee73ddbec53b4e9ee5bfc64d9cb3aacb4940e8ebcba260757ce56740b",
+      "sha256_wheel": "590d12eee73ddbec53b4e9ee5bfc64d9cb3aacb4940e8ebcba260757ce56740b",
+      "source_path": "src/packaging/licenses/__init__.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 51122,
+      "bytes_wheel": 51122,
+      "matched_via": "src/",
+      "path": "packaging/licenses/_spdx.py",
+      "sha256_source": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314",
+      "sha256_wheel": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314",
+      "source_path": "src/packaging/licenses/_spdx.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 20554,
+      "bytes_wheel": 20554,
+      "matched_via": "src/",
+      "path": "packaging/markers.py",
+      "sha256_source": "6cbe860d35d98d2b599e7f0ec73feab124e015711b30be9045e678c92940d9cc",
+      "sha256_wheel": "6cbe860d35d98d2b599e7f0ec73feab124e015711b30be9045e678c92940d9cc",
+      "source_path": "src/packaging/markers.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 42059,
+      "bytes_wheel": 42059,
+      "matched_via": "src/",
+      "path": "packaging/metadata.py",
+      "sha256_source": "934149f420a5449e6f376aa61d6f26a0823eb82cc7c6a1c8cde5aa7be43d0f63",
+      "sha256_wheel": "934149f420a5449e6f376aa61d6f26a0823eb82cc7c6a1c8cde5aa7be43d0f63",
+      "source_path": "src/packaging/metadata.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 35232,
+      "bytes_wheel": 35232,
+      "matched_via": "src/",
+      "path": "packaging/pylock.py",
+      "sha256_source": "1bce0a9fe63e42b87e8ced05da272baf16a68aa704b3718405e2735a6112467c",
+      "sha256_wheel": "1bce0a9fe63e42b87e8ced05da272baf16a68aa704b3718405e2735a6112467c",
+      "source_path": "src/packaging/pylock.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 83054,
+      "bytes_wheel": 83054,
+      "matched_via": "src/",
+      "path": "packaging/ranges.py",
+      "sha256_source": "b4781ce913e5dff9e07906f20585c54c3028e1f7ff56341828e79d522ddbfab6",
+      "sha256_wheel": "b4781ce913e5dff9e07906f20585c54c3028e1f7ff56341828e79d522ddbfab6",
+      "source_path": "src/packaging/ranges.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 7040,
+      "bytes_wheel": 7040,
+      "matched_via": "src/",
+      "path": "packaging/requirements.py",
+      "sha256_source": "459476eb2107fe30e6b1310051a5bdb44c7d3b7f78e0e87bada268282cba62f5",
+      "sha256_wheel": "459476eb2107fe30e6b1310051a5bdb44c7d3b7f78e0e87bada268282cba62f5",
+      "source_path": "src/packaging/requirements.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 52798,
+      "bytes_wheel": 52798,
+      "matched_via": "src/",
+      "path": "packaging/specifiers.py",
+      "sha256_source": "661ad31ddf45ffb861d2626734f4e3d66966029b8fdb79586bb105825d8d9d59",
+      "sha256_wheel": "661ad31ddf45ffb861d2626734f4e3d66966029b8fdb79586bb105825d8d9d59",
+      "source_path": "src/packaging/specifiers.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 38302,
+      "bytes_wheel": 38302,
+      "matched_via": "src/",
+      "path": "packaging/tags.py",
+      "sha256_source": "0e717a082a79620d79cf0321b420df15593c4916fcda03c27cb9d82e07ef5d6e",
+      "sha256_wheel": "0e717a082a79620d79cf0321b420df15593c4916fcda03c27cb9d82e07ef5d6e",
+      "source_path": "src/packaging/tags.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 12215,
+      "bytes_wheel": 12215,
+      "matched_via": "src/",
+      "path": "packaging/utils.py",
+      "sha256_source": "a13742cd9994eeca5adfb0249d126408c478026eb1f48cb97afbf2fe9f28ecc6",
+      "sha256_wheel": "a13742cd9994eeca5adfb0249d126408c478026eb1f48cb97afbf2fe9f28ecc6",
+      "source_path": "src/packaging/utils.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 39040,
+      "bytes_wheel": 39040,
+      "matched_via": "src/",
+      "path": "packaging/version.py",
+      "sha256_source": "558b2fb50fd198c660a4c082f96b8919c565911b6b4b6e07f34b6b60c074be97",
+      "sha256_wheel": "558b2fb50fd198c660a4c082f96b8919c565911b6b4b6e07f34b6b60c074be97",
+      "source_path": "src/packaging/version.py",
+      "status": "identical"
+    }
+  ],
+  "generated_at": "2026-11-15T18:06:52Z",
+  "manifest_sha256": {
+    "source_py": "a3cc98fef1d0acc6a68bd059680628e154fca0810a0f8bfeeda41862c354b096",
+    "wheel_py": "a3cc98fef1d0acc6a68bd059680628e154fca0810a0f8bfeeda41862c354b096"
+  },
+  "preconditions": {
+    "git_worktree": null,
+    "non_py_wheel_entries_skipped": 7,
+    "wheel_digest_declared": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+    "wheel_digest_matches": true
+  },
+  "schema": "wheelsrcdelta/1",
+  "source_only": [],
+  "subject": {
+    "project": "packaging",
+    "source": {
+      "commit": "929fd4b1410ac7ef61ef3f45b2f5d7e87711a9b5",
+      "kind": "git",
+      "ref": "26.3",
+      "repo": "git@github-linluozi:pypa/packaging.git"
+    },
+    "version": "26.3",
+    "wheel": {
+      "bytes": 129956,
+      "filename": "packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl"
+    }
+  },
+  "verdict": "SAME_SOURCE",
+  "verdict_reason": "all compared .py files are byte-identical"
+}

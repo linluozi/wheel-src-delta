@@ -1,0 +1,76 @@
+{
+  "certificate_sha256": "5169ecf5b071f32b47fb039701c0fd60907908a20d58362a6fb7e302dc5dfc3b",
+  "comparison": {
+    "allow": [],
+    "allowed_divergences": 0,
+    "compared": 2,
+    "differing": 0,
+    "identical": 2,
+    "matched_via": {
+      "ambiguous": 0,
+      "exact": 0,
+      "lib/": 0,
+      "src/": 2
+    },
+    "missing_in_source": 0,
+    "source_only": 0,
+    "source_py_files": 12,
+    "unexplained_divergences": 0,
+    "wheel_py_files": 2
+  },
+  "files": [
+    {
+      "allowed": false,
+      "bytes_source": 13354,
+      "bytes_wheel": 13354,
+      "matched_via": "src/",
+      "path": "markupsafe/__init__.py",
+      "sha256_source": "1f512743b0ba6e96c1d7a9450e425889e9978eb3d2d15e72dd57c8c47f518686",
+      "sha256_wheel": "1f512743b0ba6e96c1d7a9450e425889e9978eb3d2d15e72dd57c8c47f518686",
+      "source_path": "src/markupsafe/__init__.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 210,
+      "bytes_wheel": 210,
+      "matched_via": "src/",
+      "path": "markupsafe/_native.py",
+      "sha256_source": "8522ecf099b3e5aa9acae7a780927791d4f93f0369056a4aae6412762a67742f",
+      "sha256_wheel": "8522ecf099b3e5aa9acae7a780927791d4f93f0369056a4aae6412762a67742f",
+      "source_path": "src/markupsafe/_native.py",
+      "status": "identical"
+    }
+  ],
+  "generated_at": "2026-11-15T18:07:11Z",
+  "manifest_sha256": {
+    "source_py": "7d679e2ee424a836a19aef70551968ed3ab6bf76b8cd416cda8727ad96fdd8d6",
+    "wheel_py": "7d679e2ee424a836a19aef70551968ed3ab6bf76b8cd416cda8727ad96fdd8d6"
+  },
+  "preconditions": {
+    "git_worktree": null,
+    "non_py_wheel_entries_skipped": 9,
+    "wheel_digest_declared": "dd8ea6ebee7aedbf7c749fa80521d9ccf1ba473e0d1e14805caafbaad281c889",
+    "wheel_digest_matches": true
+  },
+  "schema": "wheelsrcdelta/1",
+  "source_only": [],
+  "subject": {
+    "project": "markupsafe",
+    "source": {
+      "commit": "ece26078ec168ebac69f02877238e68d4b376c91",
+      "kind": "git",
+      "ref": "3.0.4",
+      "repo": "git@github-linluozi:pallets/markupsafe.git"
+    },
+    "version": "3.0.4",
+    "wheel": {
+      "bytes": 11521,
+      "filename": "markupsafe-3.0.4-cp310-cp310-macosx_10_9_x86_64.whl",
+      "sha256": "dd8ea6ebee7aedbf7c749fa80521d9ccf1ba473e0d1e14805caafbaad281c889",
+      "url": "https://files.pythonhosted.org/packages/41/aa/9a65962e364bf19745f6bec7bde398fb1f5ca53ad2e734258e6198cc32ba/markupsafe-3.0.4-cp310-cp310-macosx_10_9_x86_64.whl"
+    }
+  },
+  "verdict": "SAME_SOURCE",
+  "verdict_reason": "all compared .py files are byte-identical"
+}
