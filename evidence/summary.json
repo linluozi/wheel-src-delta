@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T18:08:19Z",
+  "generated_at": "2026-11-15T18:15:13Z",
   "negative_controls": [
     {
       "certificate_sha256": "9bac9c9fd3d40e1980ca5253aad327f52ffa0a74f5f4435d1387aa7cf12f8564",
@@ -26,6 +26,7 @@
       "commit": "9a98e00a7c078360add417c5d62db820d4645ab1",
       "compared": 19,
       "differing": 0,
+      "diverging_files": [],
       "identical": 19,
       "matched_via": {
         "ambiguous": 0,
@@ -33,18 +34,21 @@
         "lib/": 0,
         "src/": 19
       },
+      "missing_in_source": 0,
       "project": "attrs",
       "ref": "25.4.0",
       "source_only": 0,
       "verdict": "SAME_SOURCE",
       "version": "25.4.0",
-      "wheel_sha256": "adcf7e2a1fb3b36ac48d97835bb6d8ade15b8dcce26aba8bf1d14847b57a3373"
+      "wheel_sha256": "adcf7e2a1fb3b36ac48d97835bb6d8ade15b8dcce26aba8bf1d14847b57a3373",
+      "with_allow_version_py": null
     },
     {
       "certificate_sha256": "314fe406cac8ac7620d10bb8a02fdaea25ed24c248eac4025d5ae26623dc1a15",
       "commit": "cf19179e8e2fd54c601378cec9e0d21bb12b6fb1",
       "compared": 17,
       "differing": 0,
+      "diverging_files": [],
       "identical": 17,
       "matched_via": {
         "ambiguous": 0,
@@ -52,18 +56,43 @@
         "lib/": 0,
         "src/": 17
       },
+      "missing_in_source": 0,
       "project": "click",
       "ref": "8.5.1",
       "source_only": 0,
       "verdict": "SAME_SOURCE",
       "version": "8.5.1",
-      "wheel_sha256": "8bb5376d2006950386f8c6427613334a2acadc5f559cb80e638d00b4df957e37"
+      "wheel_sha256": "8bb5376d2006950386f8c6427613334a2acadc5f559cb80e638d00b4df957e37",
+      "with_allow_version_py": null
+    },
+    {
+      "certificate_sha256": "080eec8ad290173afea0ab439f95221c6cf35a5f0c927994e637ff7df84aab9c",
+      "commit": "e6580b2746f32a783b16542812f68f1562d51c56",
+      "compared": 44,
+      "differing": 0,
+      "diverging_files": [],
+      "identical": 44,
+      "matched_via": {
+        "ambiguous": 0,
+        "exact": 44,
+        "lib/": 0,
+        "src/": 0
+      },
+      "missing_in_source": 0,
+      "project": "coverage",
+      "ref": "7.17.3",
+      "source_only": 0,
+      "verdict": "SAME_SOURCE",
+      "version": "7.17.3",
+      "wheel_sha256": "c53abadc7c4cf7870865fbaf7204e86efbacf93354e010e9188007fe2882a073",
+      "with_allow_version_py": null
     },
     {
       "certificate_sha256": "5169ecf5b071f32b47fb039701c0fd60907908a20d58362a6fb7e302dc5dfc3b",
       "commit": "ece26078ec168ebac69f02877238e68d4b376c91",
       "compared": 2,
       "differing": 0,
+      "diverging_files": [],
       "identical": 2,
       "matched_via": {
         "ambiguous": 0,
@@ -71,18 +100,21 @@
         "lib/": 0,
         "src/": 2
       },
+      "missing_in_source": 0,
       "project": "markupsafe",
       "ref": "3.0.4",
       "source_only": 0,
       "verdict": "SAME_SOURCE",
       "version": "3.0.4",
-      "wheel_sha256": "dd8ea6ebee7aedbf7c749fa80521d9ccf1ba473e0d1e14805caafbaad281c889"
+      "wheel_sha256": "dd8ea6ebee7aedbf7c749fa80521d9ccf1ba473e0d1e14805caafbaad281c889",
+      "with_allow_version_py": null
     },
     {
       "certificate_sha256": "c80806001a78068d7706dd4d2e7f6e07e86d877729e8406ad277bf9821c90d4b",
       "commit": "929fd4b1410ac7ef61ef3f45b2f5d7e87711a9b5",
       "compared": 22,
       "differing": 0,
+      "diverging_files": [],
       "identical": 22,
       "matched_via": {
         "ambiguous": 0,
@@ -90,18 +122,21 @@
         "lib/": 0,
         "src/": 22
       },
+      "missing_in_source": 0,
       "project": "packaging",
       "ref": "26.3",
       "source_only": 0,
       "verdict": "SAME_SOURCE",
       "version": "26.3",
-      "wheel_sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+      "wheel_sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "with_allow_version_py": null
     },
     {
       "certificate_sha256": "649937278531f9e689f299c500123b78de911e78e7b0f6f09213e8341a52dce2",
       "commit": "ebd9b3af90247b8858d415a05e96e9ee61e48d07",
       "compared": 1,
       "differing": 0,
+      "diverging_files": [],
       "identical": 1,
       "matched_via": {
         "ambiguous": 0,
@@ -109,18 +144,21 @@
         "lib/": 0,
         "src/": 0
       },
+      "missing_in_source": 0,
       "project": "six",
       "ref": "1.17.0",
       "source_only": 0,
       "verdict": "SAME_SOURCE",
       "version": "1.17.0",
-      "wheel_sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+      "wheel_sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "with_allow_version_py": null
     },
     {
       "certificate_sha256": "3313149ae480aeae9ec4d6d460deb5f3f15a184e80165e26e908142c9b0d2d6b",
       "commit": "a0b15ebb09167ede584fc36ad5362fc3039b0530",
       "compared": 12,
       "differing": 0,
+      "diverging_files": [],
       "identical": 12,
       "matched_via": {
         "ambiguous": 0,
@@ -128,21 +166,89 @@
         "lib/": 0,
         "src/": 0
       },
+      "missing_in_source": 0,
       "project": "tomlkit",
       "ref": "0.15.2",
       "source_only": 0,
       "verdict": "SAME_SOURCE",
       "version": "0.15.2",
-      "wheel_sha256": "05562412163a3037b94497385fb7f9204c637bc605af7a48199e41cf2272f437"
+      "wheel_sha256": "05562412163a3037b94497385fb7f9204c637bc605af7a48199e41cf2272f437",
+      "with_allow_version_py": null
+    },
+    {
+      "certificate_sha256": "b4d5b91b1a1e1dbd54d77b293eb0102ea51557a3e37f116f31551d766b0a33ae",
+      "commit": "fee635f1233024b095ee644291aead41481553ee",
+      "compared": 129,
+      "differing": 0,
+      "diverging_files": [
+        {
+          "bytes_wheel": 524,
+          "path": "tox/version.py",
+          "status": "missing_in_source"
+        }
+      ],
+      "identical": 129,
+      "matched_via": {
+        "ambiguous": 0,
+        "exact": 0,
+        "lib/": 0,
+        "src/": 129
+      },
+      "missing_in_source": 1,
+      "project": "tox",
+      "ref": "4.67.13",
+      "source_only": 0,
+      "verdict": "DIVERGENT",
+      "version": "4.67.13",
+      "wheel_sha256": "4d6fa08dbe5e841f2abfee1dd4f5cdf31af30d68a3d78b85a7bf57eced5f3c6c",
+      "with_allow_version_py": {
+        "allowed": 1,
+        "sha256": "a107ca23d80ffc3c39a51acdae3056b5517ab080fb61f5cb8898c0d37fbb46ee",
+        "verdict": "SAME_SOURCE"
+      }
+    },
+    {
+      "certificate_sha256": "16e6129b565055d8c33433f10125090b0095e3e18575e3f88aeee002d2602451",
+      "commit": "9a4852e189e927f142313d18e76080eb15130bd4",
+      "compared": 92,
+      "differing": 0,
+      "diverging_files": [
+        {
+          "bytes_wheel": 524,
+          "path": "virtualenv/version.py",
+          "status": "missing_in_source"
+        }
+      ],
+      "identical": 92,
+      "matched_via": {
+        "ambiguous": 0,
+        "exact": 0,
+        "lib/": 0,
+        "src/": 92
+      },
+      "missing_in_source": 1,
+      "project": "virtualenv",
+      "ref": "21.15.6",
+      "source_only": 0,
+      "verdict": "DIVERGENT",
+      "version": "21.15.6",
+      "wheel_sha256": "4b99ab9b95ff11043939bb4cad2fa0449175fa5a478372864f62160cb6c1a7ed",
+      "with_allow_version_py": {
+        "allowed": 1,
+        "sha256": "953c0df52b9ce86123bedba6e3d98b50897ffac7d9a6fe693cf55ed2180e4dfa",
+        "verdict": "SAME_SOURCE"
+      }
     }
   ],
   "totals": {
     "differing": 0,
-    "identical": 73,
-    "matched_via_src": 60,
-    "naive_exact_path_miss_rate": 0.8219,
-    "naive_exact_path_misses": 60,
-    "py_files_compared": 73,
-    "releases": 6
+    "identical": 338,
+    "missing_in_source": 2,
+    "naive_exact_path_miss_rate": 0.8314,
+    "naive_exact_path_misses": 281,
+    "py_files_compared": 338,
+    "releases": 9,
+    "releases_with_divergence": 2,
+    "src_normalised": 281
   }
 }

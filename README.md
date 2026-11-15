@@ -67,27 +67,36 @@ Exit codes: `0` SAME_SOURCE, `2` DIVERGENT, `3` INCONCLUSIVE (no comparable `.py
 precondition failed), `1` usage/network error. `--allow GLOB` (repeatable) marks a divergence as
 known-generated: it is still listed and counted, but does not flip the verdict.
 
-## Evidence: six real PyPI releases (2026-11-16)
+## Evidence: nine real PyPI releases (2026-11-16)
 
-Each row was produced by one `check` command against the tag on the project's own repository; the
-full certificates (per-file sha256 of both sides) are in `evidence/certs/`, and
-`evidence/summary.json` aggregates them.
+Each row is one `check` command against the tag on the project's own repository. Full certificates
+(per-file sha256 of both sides) are in `evidence/certs/`; `evidence/summary.json` aggregates them.
 
-| Project | Version = ref | `.py` compared | identical | differing | matched via |
-| --- | --- | --- | --- | --- | --- |
-| attrs | 25.4.0 | 19 | 19 | 0 | `src/` 19 |
-| click | 8.5.1 | 17 | 17 | 0 | `src/` 17 |
-| packaging | 26.3 | 22 | 22 | 0 | `src/` 22 |
-| markupsafe | 3.0.4 | 2 | 2 | 0 | `src/` 2 |
-| tomlkit | 0.15.2 | 12 | 12 | 0 | exact 12 |
-| six | 1.17.0 | 1 | 1 | 0 | exact 1 |
-| **total** | | **73** | **73** | **0** | `src/` **60** |
+| Project | Version = ref | `.py` compared | identical | missing in source | matched via | verdict |
+| --- | --- | --- | --- | --- | --- | --- |
+| attrs | 25.4.0 | 19 | 19 | 0 | `src/` 19 | SAME_SOURCE |
+| click | 8.5.1 | 17 | 17 | 0 | `src/` 17 | SAME_SOURCE |
+| coverage | 7.17.3 | 44 | 44 | 0 | `src/` 44 | SAME_SOURCE |
+| markupsafe | 3.0.4 | 2 | 2 | 0 | `src/` 2 | SAME_SOURCE |
+| packaging | 26.3 | 22 | 22 | 0 | `src/` 22 | SAME_SOURCE |
+| six | 1.17.0 | 1 | 1 | 0 | exact 1 | SAME_SOURCE |
+| tomlkit | 0.15.2 | 12 | 12 | 0 | exact 12 | SAME_SOURCE |
+| tox | 4.67.13 | 129 | 129 | **1** | `src/` 129 | **DIVERGENT** |
+| virtualenv | 21.15.6 | 92 | 92 | **1** | `src/` 92 | **DIVERGENT** |
+| **total** | | **338** | **338** | **2** | `src/` **281** | 2/9 divergent |
 
-Measured conclusion: all 73 wheel `.py` files are byte-identical to their release tag, **but 60/73
-(82.2%) only match after `src/` normalisation**. A checker that compares paths literally reports
-zero matches for four of the six releases — a 100% false-divergence rate on those projects. Layout
-handling is not a convenience; it is the difference between a usable audit and a wall of false
-positives.
+Two measured facts, both reproducible from the certificates:
+
+1. **Layout normalisation is load-bearing.** 281/338 files (83.1%) match only after `src/`
+   normalisation. A literal path comparison reports 100% missing on the six `src/`-layout
+   releases: 281 files of false divergence. Without the mapping this tool would be useless on the
+   majority of modern Python projects.
+2. **The two divergences are real and explained, not papered over.** Both are a 524-byte
+   `<package>/version.py` that exists in the wheel but not at the tag — build-generated version
+   modules. The strict verdict is `DIVERGENT`; the tool never auto-allowlists them. With an explicit
+   `--allow '*/version.py'` the same run becomes `SAME_SOURCE` while still reporting
+   `allowed_divergences: 1` (`evidence/allowed/tox.json`, `evidence/allowed/virtualenv.json`).
+   Everything else — 336 files — is byte-identical.
 
 ### Negative controls (the instrument can say no)
 
@@ -104,12 +113,13 @@ returned 73/73 identical returns a precise, byte-level diff when the source is w
 ## 本轮创新
 
 **B 档：把「发布产物 ↔ 源码树」的逐文件字节散度做成可离线复算的证书，并把路径布局归一化作为
-证书的一部分显式记录。** 与既有台账条目（`sametree-recheck` 复核 PR 的 base/patched 同树、
-`perfclaim-guard` 管声明、`caseproof` 数用例）不同：这里测量的是 **PyPI wheel vs 发布 tag**，
-不是同一仓库的两棵树，也不是性能声明。新结论是可证伪的：6 个真实发布共 73 个 `.py` 全部逐字节
-一致，但其中 60 个（82.2%）只有经过 `src/` 归一化才匹配——朴素路径比较会在 4/6 个项目上把
-100% 的文件误判为缺失。两个负控（attrs 25.4.0 vs 25.3.0：7/19 不同；six 1.17.0 vs 1.16.0：
-1/1 不同）证明该证书不是只会输出 SAME。
+证书的一部分显式记录。** 既有台账条目（`sametree-recheck` 复核 PR 的 base/patched 同树、
+`perfclaim-guard` 管声明、`caseproof` 数用例）都不测「PyPI 已发布 wheel vs 发布 tag」。本轮给出
+的新结论是可证伪的：9 个真实发布共 338 个可比 `.py`，336 个逐字节一致；2 个严格不一致都精确定位
+到构建期生成的 `version.py`（524 字节，tag 中不存在），显式 `--allow` 后归零；而 281/338
+（83.1%）只有经过 `src/` 归一化才匹配——朴素路径比较会在 6 个 `src/` 布局项目上把 100% 的文件
+误判为缺失。两个负控（attrs 25.4.0 vs 25.3.0：7/19 不同；six 1.17.0 vs 1.16.0：1/1 不同）证明
+该证书不是只会输出 SAME。
 
 ## Reproduce (copy-paste)
 
