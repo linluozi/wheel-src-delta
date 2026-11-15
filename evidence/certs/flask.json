@@ -1,0 +1,318 @@
+{
+  "certificate_sha256": "cd23d9ae55af2aca9a29d52cc5dd1ee067bcc9ad8e8c35763ed8b4389b72f15f",
+  "comparison": {
+    "allow": [],
+    "allowed_divergences": 0,
+    "compared": 24,
+    "differing": 0,
+    "identical": 24,
+    "matched_via": {
+      "ambiguous": 0,
+      "exact": 0,
+      "lib/": 0,
+      "src/": 24
+    },
+    "missing_in_source": 0,
+    "source_only": 0,
+    "source_py_files": 83,
+    "unexplained_divergences": 0,
+    "wheel_py_files": 24
+  },
+  "files": [
+    {
+      "allowed": false,
+      "bytes_source": 2701,
+      "bytes_wheel": 2701,
+      "matched_via": "src/",
+      "path": "flask/__init__.py",
+      "sha256_source": "987bc937d4b0b65d510ed8c2a82218c889e22bf499fe5fe1a94ca73b382927da",
+      "sha256_wheel": "987bc937d4b0b65d510ed8c2a82218c889e22bf499fe5fe1a94ca73b382927da",
+      "source_path": "src/flask/__init__.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 30,
+      "bytes_wheel": 30,
+      "matched_via": "src/",
+      "path": "flask/__main__.py",
+      "sha256_source": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "sha256_wheel": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "source_path": "src/flask/__main__.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 61719,
+      "bytes_wheel": 61719,
+      "matched_via": "src/",
+      "path": "flask/app.py",
+      "sha256_source": "93bb56f0b1d14a57548baccab0528aec0c5afd62f8ceed5edb03cdb6122cbbba",
+      "sha256_wheel": "93bb56f0b1d14a57548baccab0528aec0c5afd62f8ceed5edb03cdb6122cbbba",
+      "source_path": "src/flask/app.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 4541,
+      "bytes_wheel": 4541,
+      "matched_via": "src/",
+      "path": "flask/blueprints.py",
+      "sha256_source": "a79404da5635f0622d6ddaff44a46967c0e8d7b8343ef4062206644940e15f69",
+      "sha256_wheel": "a79404da5635f0622d6ddaff44a46967c0e8d7b8343ef4062206644940e15f69",
+      "source_path": "src/flask/blueprints.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 37184,
+      "bytes_wheel": 37184,
+      "matched_via": "src/",
+      "path": "flask/cli.py",
+      "sha256_source": "3df87bdbe07196fa07d101c20ce7351ef5c6ecaab95deb5fdf3ccdcf690d4879",
+      "sha256_wheel": "3df87bdbe07196fa07d101c20ce7351ef5c6ecaab95deb5fdf3ccdcf690d4879",
+      "source_path": "src/flask/cli.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 13219,
+      "bytes_wheel": 13219,
+      "matched_via": "src/",
+      "path": "flask/config.py",
+      "sha256_source": "3e2a85d033da9ba1d6d051f8087d61a574c17b7d0d4b38cf10ec2bcf56fa92dd",
+      "sha256_wheel": "3e2a85d033da9ba1d6d051f8087d61a574c17b7d0d4b38cf10ec2bcf56fa92dd",
+      "source_path": "src/flask/config.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 15521,
+      "bytes_wheel": 15521,
+      "matched_via": "src/",
+      "path": "flask/ctx.py",
+      "sha256_source": "a0c7b44d1b12716d2a75a22a6af56c93c3fdaa212f018e551e7d45020917f279",
+      "sha256_wheel": "a0c7b44d1b12716d2a75a22a6af56c93c3fdaa212f018e551e7d45020917f279",
+      "source_path": "src/flask/ctx.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 6080,
+      "bytes_wheel": 6080,
+      "matched_via": "src/",
+      "path": "flask/debughelpers.py",
+      "sha256_source": "3c6203852b56fde7d18e969adf31c8a68fa1b52b49391e35229dce2563d8070a",
+      "sha256_wheel": "3c6203852b56fde7d18e969adf31c8a68fa1b52b49391e35229dce2563d8070a",
+      "source_path": "src/flask/debughelpers.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 1713,
+      "bytes_wheel": 1713,
+      "matched_via": "src/",
+      "path": "flask/globals.py",
+      "sha256_source": "5dd419992b4198f22cf2df77b63c7aa4eec19b78286c068e3569057141da19ab",
+      "sha256_wheel": "5dd419992b4198f22cf2df77b63c7aa4eec19b78286c068e3569057141da19ab",
+      "source_path": "src/flask/globals.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 23517,
+      "bytes_wheel": 23517,
+      "matched_via": "src/",
+      "path": "flask/helpers.py",
+      "sha256_source": "ac96607bbfc9dbcf09d5442fe7e90d7f8a046b0df7d8f3fc3535b44112016d71",
+      "sha256_wheel": "ac96607bbfc9dbcf09d5442fe7e90d7f8a046b0df7d8f3fc3535b44112016d71",
+      "source_path": "src/flask/helpers.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 5602,
+      "bytes_wheel": 5602,
+      "matched_via": "src/",
+      "path": "flask/json/__init__.py",
+      "sha256_source": "84b351f3df296aaa1e7dd78086b69ae70c89cbe6e6441da4d9d578120572d99f",
+      "sha256_wheel": "84b351f3df296aaa1e7dd78086b69ae70c89cbe6e6441da4d9d578120572d99f",
+      "source_path": "src/flask/json/__init__.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 7672,
+      "bytes_wheel": 7672,
+      "matched_via": "src/",
+      "path": "flask/json/provider.py",
+      "sha256_source": "e62984cd8e478d5d87a1456b41b24ba970b330da595df0f46355ea74b5765c10",
+      "sha256_wheel": "e62984cd8e478d5d87a1456b41b24ba970b330da595df0f46355ea74b5765c10",
+      "source_path": "src/flask/json/provider.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 9281,
+      "bytes_wheel": 9281,
+      "matched_via": "src/",
+      "path": "flask/json/tag.py",
+      "sha256_source": "0e168dc2e20e85db7647be28382f58e19f19a6bc4562245be5d50fe5bcb220dc",
+      "sha256_wheel": "0e168dc2e20e85db7647be28382f58e19f19a6bc4562245be5d50fe5bcb220dc",
+      "source_path": "src/flask/json/tag.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 2377,
+      "bytes_wheel": 2377,
+      "matched_via": "src/",
+      "path": "flask/logging.py",
+      "sha256_source": "f2c33758c4ee6e2d5c05bd9cfe53e45a937427c74c02aae029160b2e2d5d0952",
+      "sha256_wheel": "f2c33758c4ee6e2d5c05bd9cfe53e45a937427c74c02aae029160b2e2d5d0952",
+      "source_path": "src/flask/logging.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 38106,
+      "bytes_wheel": 38106,
+      "matched_via": "src/",
+      "path": "flask/sansio/app.py",
+      "sha256_source": "c211944500e43748e6852e021ceec343de861a5652d2411390a9009284639785",
+      "sha256_wheel": "c211944500e43748e6852e021ceec343de861a5652d2411390a9009284639785",
+      "source_path": "src/flask/sansio/app.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 24637,
+      "bytes_wheel": 24637,
+      "matched_via": "src/",
+      "path": "flask/sansio/blueprints.py",
+      "sha256_source": "4ea7beec4919fad6d67219bc883a027c3f38f1fd3fde72efe8d3637883ef1f03",
+      "sha256_wheel": "4ea7beec4919fad6d67219bc883a027c3f38f1fd3fde72efe8d3637883ef1f03",
+      "source_path": "src/flask/sansio/blueprints.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 30371,
+      "bytes_wheel": 30371,
+      "matched_via": "src/",
+      "path": "flask/sansio/scaffold.py",
+      "sha256_source": "c120125d8745456266a9c2f45eaf93ecdf8f0d55128851af8cef643d9839f1b9",
+      "sha256_wheel": "c120125d8745456266a9c2f45eaf93ecdf8f0d55128851af8cef643d9839f1b9",
+      "source_path": "src/flask/sansio/scaffold.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 14969,
+      "bytes_wheel": 14969,
+      "matched_via": "src/",
+      "path": "flask/sessions.py",
+      "sha256_source": "7b2c11aa6cad4e66275ff102efcf980462684dce570ff951a61406e4b6cdd5dd",
+      "sha256_wheel": "7b2c11aa6cad4e66275ff102efcf980462684dce570ff951a61406e4b6cdd5dd",
+      "source_path": "src/flask/sessions.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 750,
+      "bytes_wheel": 750,
+      "matched_via": "src/",
+      "path": "flask/signals.py",
+      "sha256_source": "57b94c530c3b0aa809d93854067d4f89ab59b506a73b2b7b399a6ed86648fb7e",
+      "sha256_wheel": "57b94c530c3b0aa809d93854067d4f89ab59b506a73b2b7b399a6ed86648fb7e",
+      "source_path": "src/flask/signals.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 7678,
+      "bytes_wheel": 7678,
+      "matched_via": "src/",
+      "path": "flask/templating.py",
+      "sha256_source": "bdb224c18031b1211f0f14080f580a46f05041c19612e5980a71f45cadc4a8e2",
+      "sha256_wheel": "bdb224c18031b1211f0f14080f580a46f05041c19612e5980a71f45cadc4a8e2",
+      "source_path": "src/flask/templating.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 10117,
+      "bytes_wheel": 10117,
+      "matched_via": "src/",
+      "path": "flask/testing.py",
+      "sha256_source": "cf30bb5f184158e3fd1faf7b215ff8486ecb8372f36f93d68b210ff77fca4171",
+      "sha256_wheel": "cf30bb5f184158e3fd1faf7b215ff8486ecb8372f36f93d68b210ff77fca4171",
+      "source_path": "src/flask/testing.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 3293,
+      "bytes_wheel": 3293,
+      "matched_via": "src/",
+      "path": "flask/typing.py",
+      "sha256_source": "2fe2f9b768ca812d1a3a65618a843fca5a9c8225459c0eb2c4ef912cd86af865",
+      "sha256_wheel": "2fe2f9b768ca812d1a3a65618a843fca5a9c8225459c0eb2c4ef912cd86af865",
+      "source_path": "src/flask/typing.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 6962,
+      "bytes_wheel": 6962,
+      "matched_via": "src/",
+      "path": "flask/views.py",
+      "sha256_source": "c73271ea826a18495386d12085937b65018cc394c3172b91c5491e73046e0280",
+      "sha256_wheel": "c73271ea826a18495386d12085937b65018cc394c3172b91c5491e73046e0280",
+      "source_path": "src/flask/views.py",
+      "status": "identical"
+    },
+    {
+      "allowed": false,
+      "bytes_source": 9406,
+      "bytes_wheel": 9406,
+      "matched_via": "src/",
+      "path": "flask/wrappers.py",
+      "sha256_source": "8d492fe2655e93622ae21c3177846faab20c6faf41bf43c49438162e6779391a",
+      "sha256_wheel": "8d492fe2655e93622ae21c3177846faab20c6faf41bf43c49438162e6779391a",
+      "source_path": "src/flask/wrappers.py",
+      "status": "identical"
+    }
+  ],
+  "generated_at": "2026-11-15T18:19:26Z",
+  "manifest_sha256": {
+    "source_py": "b1961deba779bec87bfd9e1e0daad9bad251d9294422b641caf2fa2ae0751ff6",
+    "wheel_py": "b1961deba779bec87bfd9e1e0daad9bad251d9294422b641caf2fa2ae0751ff6"
+  },
+  "preconditions": {
+    "git_worktree": null,
+    "non_py_wheel_entries_skipped": 7,
+    "wheel_digest_declared": "f4bcbefc124291925f1a26446da31a5178f9483862233b23c0c96a20701f670c",
+    "wheel_digest_matches": true
+  },
+  "schema": "wheelsrcdelta/1",
+  "source_only": [],
+  "subject": {
+    "project": "flask",
+    "source": {
+      "commit": "22d924701a6ae2e4cd01e9a15bbaf3946094af65",
+      "kind": "git",
+      "ref": "3.1.3",
+      "repo": "git@github-linluozi:pallets/flask.git"
+    },
+    "version": "3.1.3",
+    "wheel": {
+      "bytes": 103424,
+      "filename": "flask-3.1.3-py3-none-any.whl",
+      "sha256": "f4bcbefc124291925f1a26446da31a5178f9483862233b23c0c96a20701f670c",
+      "url": "https://files.pythonhosted.org/packages/7f/9c/34f6962f9b9e9c71f6e5ed806e0d0ff03c9d1b0b2340088a0cf4bce09b18/flask-3.1.3-py3-none-any.whl"
+    }
+  },
+  "verdict": "SAME_SOURCE",
+  "verdict_reason": "all compared .py files are byte-identical"
+}
