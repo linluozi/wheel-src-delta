@@ -377,3 +377,14 @@ class TestBatch(Base):
         code, _ = self.run_cli(["batch", mf, "--json-dir", outdir, "--quiet"])
         self.assertEqual(code, 0)
         self.assertTrue(os.path.exists(os.path.join(outdir, "demo-1.json")))
+
+    def test_batch_summary_digest_verifies(self):
+        whl = self.wheel({"demo/__init__.py": b"x = 1\n"})
+        repo = self.repo({"demo/__init__.py": b"x = 1\n"})
+        mf = self.manifest([{"project": "demo", "version": "1", "wheel": whl,
+                             "against": "git", "repo": repo, "ref": "v1"}])
+        out = os.path.join(self.root, "bs.json")
+        self.run_cli(["batch", mf, "--json-out", out, "--quiet"])
+        code, printed = self.run_cli(["verify", out])
+        self.assertEqual(code, 0)
+        self.assertTrue(json.loads(printed)["valid"])

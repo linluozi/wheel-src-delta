@@ -305,7 +305,12 @@ def manifest_sha256(entries: Iterable[dict], key: str) -> str:
 
 def certificate_digest(cert: dict) -> str:
     """sha256 over the deterministic part of a certificate (no timestamps)."""
-    payload = {k: cert[k] for k in ("schema", "subject", "preconditions", "comparison", "files", "source_only", "verdict", "verdict_reason")}
+    if cert.get("schema") == "wheelsrcdelta-batch/1":
+        keys = ("schema", "entries", "totals", "verdict")
+    else:
+        keys = ("schema", "subject", "preconditions", "comparison", "files",
+                "source_only", "verdict", "verdict_reason")
+    payload = {k: cert[k] for k in keys}
     blob = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
     return sha256_bytes(blob.encode("utf-8"))
 

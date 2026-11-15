@@ -178,6 +178,7 @@ def cmd_batch(args) -> int:
         "verdict": {EXIT_SAME: "ALL_SAME", EXIT_DIVERGENT: "ANY_DIVERGENT",
                     EXIT_INCONCLUSIVE: "ANY_INCONCLUSIVE"}[worst],
     }
+    summary["certificate_sha256"] = certificate_digest(summary)
     _emit(summary, args.json_out, args.quiet)
     return worst
 
