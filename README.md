@@ -173,7 +173,7 @@ python3 -m wheelsrcdelta verify /tmp/attrs.json
 
 ## Tests
 
-`python3 -m unittest discover -s tests -v` → **28 tests, OK** (0.46 s). They build wheels, sdists and
+`python3 -m unittest discover -s tests -v` → **29 tests, OK** (0.48 s). They build wheels, sdists and
 real git repositories in temporary directories and cover: exact/`src/` mapping, single-byte and
 CRLF/BOM differences, empty files, missing and source-only modules, allowlists, ambiguity between
 `demo/` and `src/demo/`, digest mismatch, certificate determinism/tampering, batch aggregation/gating, and all CLI exit codes.
